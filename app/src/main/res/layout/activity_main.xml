@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorOnBackground"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fab_buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/fab_buttons_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids=
+                "fab_button_day_photo,
+                 fab_button_search_in_wiki,
+                 fab_button_search_in_nasa_archive,
+                 fab_button_settings"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fab_button_day_photo"
+            android:layout_width="@dimen/fab_button_day_photo_width"
+            android:layout_height="@dimen/fab_button_day_photo_height"
+            android:background="@drawable/ic_telescope_tab_bottom"
+            app:layout_constraintCircle="@id/bottom_fab_maket"
+            app:layout_constraintCircleRadius="@dimen/fab_buttons_radius"
+            app:layout_constraintCircleAngle="285"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fab_button_search_in_wiki"
+            android:layout_width="@dimen/fab_button_search_in_wiki_width"
+            android:layout_height="@dimen/fab_button_search_in_wiki_height"
+            android:background="@drawable/ic_wikipedia_tab_bottom"
+            app:layout_constraintCircle="@id/bottom_fab_maket"
+            app:layout_constraintCircleRadius="@dimen/fab_buttons_radius"
+            app:layout_constraintCircleAngle="330"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fab_button_search_in_nasa_archive"
+            android:layout_width="@dimen/fab_button_search_in_nasa_archive_width"
+            android:layout_height="@dimen/fab_button_search_in_nasa_archive_height"
+            android:background="@drawable/ic_archive_tab_bottom"
+            app:layout_constraintCircle="@id/bottom_fab_maket"
+            app:layout_constraintCircleRadius="@dimen/fab_buttons_radius"
+            app:layout_constraintCircleAngle="20"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fab_button_settings"
+            android:layout_width="@dimen/fab_button_settings_width"
+            android:layout_height="@dimen/fab_button_settings_height"
+            android:background="@drawable/ic_settings_menu_tab_bottom"
+            app:layout_constraintCircle="@id/bottom_fab_maket"
+            app:layout_constraintCircleRadius="@dimen/fab_buttons_radius"
+            app:layout_constraintCircleAngle="73"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/bottom_fab_maket"
+            android:layout_width="@dimen/fab_bottom_maket_right_width"
+            android:layout_height="@dimen/fab_bottom_maket_right_height"
+            android:visibility="invisible"
+            android:layout_marginBottom="?actionBarSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+            android:id="@+id/bottom_fab_maket_right"
+            android:layout_width="@dimen/fab_bottom_maket_right_width"
+            android:layout_height="@dimen/fab_bottom_maket_right_height"
+            android:visibility="invisible"
+            android:layout_marginBottom="?actionBarSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/bottom_navigation_menu"
+        layout="@layout/bottom_navigation_menu_layout" />
+
+</FrameLayout>
